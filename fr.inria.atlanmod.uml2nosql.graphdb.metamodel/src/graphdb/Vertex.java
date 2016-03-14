@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.Vertex#getInEdges <em>In Edges</em>}</li>
  *   <li>{@link graphdb.Vertex#getOutEdges <em>Out Edges</em>}</li>
- *   <li>{@link graphdb.Vertex#getLabel <em>Label</em>}</li>
+ *   <li>{@link graphdb.Vertex#getLabels <em>Labels</em>}</li>
  * </ul>
- * </p>
  *
  * @see graphdb.GraphdbPackage#getVertex()
  * @model
@@ -60,19 +60,19 @@ public interface Vertex extends GraphElement {
 	EList<Edge> getOutEdges();
 
 	/**
-	 * Returns the value of the '<em><b>Label</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Labels</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Label</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Labels</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Label</em>' attribute list.
-	 * @see graphdb.GraphdbPackage#getVertex_Label()
+	 * @return the value of the '<em>Labels</em>' attribute list.
+	 * @see graphdb.GraphdbPackage#getVertex_Labels()
 	 * @model
 	 * @generated
 	 */
-	EList<String> getLabel();
+	EList<String> getLabels();
 
 } // Vertex

@@ -10,6 +10,7 @@
       <genEnumLiterals ecoreEnumLiteral="graphdb.ecore#//PrimitiveType/Object"/>
       <genEnumLiterals ecoreEnumLiteral="graphdb.ecore#//PrimitiveType/String"/>
       <genEnumLiterals ecoreEnumLiteral="graphdb.ecore#//PrimitiveType/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="graphdb.ecore#//PrimitiveType/Boolean"/>
     </genEnums>
     <genClasses ecoreClass="graphdb.ecore#//Graph">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Graph/vertices"/>
@@ -21,7 +22,7 @@
     <genClasses ecoreClass="graphdb.ecore#//Vertex">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Vertex/inEdges"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Vertex/outEdges"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Vertex/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Vertex/labels"/>
     </genClasses>
     <genClasses ecoreClass="graphdb.ecore#//Edge">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Edge/tail"/>

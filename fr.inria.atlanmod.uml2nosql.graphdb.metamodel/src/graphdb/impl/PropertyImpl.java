@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.impl.PropertyImpl#getKey <em>Key</em>}</li>
  *   <li>{@link graphdb.impl.PropertyImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link graphdb.impl.PropertyImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -25,12 +25,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.impl.VertexImpl#getInEdges <em>In Edges</em>}</li>
  *   <li>{@link graphdb.impl.VertexImpl#getOutEdges <em>Out Edges</em>}</li>
- *   <li>{@link graphdb.impl.VertexImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link graphdb.impl.VertexImpl#getLabels <em>Labels</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -56,14 +56,14 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	protected EList<Edge> outEdges;
 
 	/**
-	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute list.
+	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLabel()
+	 * @see #getLabels()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> label;
+	protected EList<String> labels;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,11 +113,11 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getLabel() {
-		if (label == null) {
-			label = new EDataTypeUniqueEList<String>(String.class, this, GraphdbPackage.VERTEX__LABEL);
+	public EList<String> getLabels() {
+		if (labels == null) {
+			labels = new EDataTypeUniqueEList<String>(String.class, this, GraphdbPackage.VERTEX__LABELS);
 		}
-		return label;
+		return labels;
 	}
 
 	/**
@@ -165,8 +165,8 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return getInEdges();
 			case GraphdbPackage.VERTEX__OUT_EDGES:
 				return getOutEdges();
-			case GraphdbPackage.VERTEX__LABEL:
-				return getLabel();
+			case GraphdbPackage.VERTEX__LABELS:
+				return getLabels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,9 +188,9 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				getOutEdges().clear();
 				getOutEdges().addAll((Collection<? extends Edge>)newValue);
 				return;
-			case GraphdbPackage.VERTEX__LABEL:
-				getLabel().clear();
-				getLabel().addAll((Collection<? extends String>)newValue);
+			case GraphdbPackage.VERTEX__LABELS:
+				getLabels().clear();
+				getLabels().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,8 +210,8 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 			case GraphdbPackage.VERTEX__OUT_EDGES:
 				getOutEdges().clear();
 				return;
-			case GraphdbPackage.VERTEX__LABEL:
-				getLabel().clear();
+			case GraphdbPackage.VERTEX__LABELS:
+				getLabels().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -229,8 +229,8 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return inEdges != null && !inEdges.isEmpty();
 			case GraphdbPackage.VERTEX__OUT_EDGES:
 				return outEdges != null && !outEdges.isEmpty();
-			case GraphdbPackage.VERTEX__LABEL:
-				return label != null && !label.isEmpty();
+			case GraphdbPackage.VERTEX__LABELS:
+				return labels != null && !labels.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -245,8 +245,8 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (label: ");
-		result.append(label);
+		result.append(" (labels: ");
+		result.append(labels);
 		result.append(')');
 		return result.toString();
 	}

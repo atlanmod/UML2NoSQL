@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.Graph#getVertices <em>Vertices</em>}</li>
  *   <li>{@link graphdb.Graph#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @see graphdb.GraphdbPackage#getGraph()
  * @model

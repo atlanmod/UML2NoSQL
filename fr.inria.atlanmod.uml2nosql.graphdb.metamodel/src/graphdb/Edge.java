@@ -10,12 +10,12 @@ package graphdb;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.Edge#getTail <em>Tail</em>}</li>
  *   <li>{@link graphdb.Edge#getHead <em>Head</em>}</li>
  *   <li>{@link graphdb.Edge#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see graphdb.GraphdbPackage#getEdge()
  * @model

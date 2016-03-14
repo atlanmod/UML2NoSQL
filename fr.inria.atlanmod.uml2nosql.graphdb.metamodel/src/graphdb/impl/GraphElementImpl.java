@@ -26,10 +26,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.impl.GraphElementImpl#getProperties <em>Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

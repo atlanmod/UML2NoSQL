@@ -178,13 +178,13 @@ public interface GraphdbPackage extends EPackage {
 	int VERTEX__OUT_EDGES = GRAPH_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute list.
+	 * The feature id for the '<em><b>Labels</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX__LABEL = GRAPH_ELEMENT_FEATURE_COUNT + 2;
+	int VERTEX__LABELS = GRAPH_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
@@ -448,15 +448,15 @@ public interface GraphdbPackage extends EPackage {
 	EReference getVertex_OutEdges();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link graphdb.Vertex#getLabel <em>Label</em>}'.
+	 * Returns the meta object for the attribute list '{@link graphdb.Vertex#getLabels <em>Labels</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Label</em>'.
-	 * @see graphdb.Vertex#getLabel()
+	 * @return the meta object for the attribute list '<em>Labels</em>'.
+	 * @see graphdb.Vertex#getLabels()
 	 * @see #getVertex()
 	 * @generated
 	 */
-	EAttribute getVertex_Label();
+	EAttribute getVertex_Labels();
 
 	/**
 	 * Returns the meta object for class '{@link graphdb.Edge <em>Edge</em>}'.
@@ -658,12 +658,12 @@ public interface GraphdbPackage extends EPackage {
 		EReference VERTEX__OUT_EDGES = eINSTANCE.getVertex_OutEdges();
 
 		/**
-		 * The meta object literal for the '<em><b>Label</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Labels</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERTEX__LABEL = eINSTANCE.getVertex_Label();
+		EAttribute VERTEX__LABELS = eINSTANCE.getVertex_Labels();
 
 		/**
 		 * The meta object literal for the '{@link graphdb.impl.EdgeImpl <em>Edge</em>}' class.

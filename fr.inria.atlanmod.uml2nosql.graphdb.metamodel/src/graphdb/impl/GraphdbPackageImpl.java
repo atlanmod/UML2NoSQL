@@ -214,7 +214,7 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVertex_Label() {
+	public EAttribute getVertex_Labels() {
 		return (EAttribute)vertexEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -346,7 +346,7 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__IN_EDGES);
 		createEReference(vertexEClass, VERTEX__OUT_EDGES);
-		createEAttribute(vertexEClass, VERTEX__LABEL);
+		createEAttribute(vertexEClass, VERTEX__LABELS);
 
 		edgeEClass = createEClass(EDGE);
 		createEReference(edgeEClass, EDGE__TAIL);
@@ -406,7 +406,7 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 		initEClass(vertexEClass, Vertex.class, "Vertex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_InEdges(), this.getEdge(), this.getEdge_Head(), "inEdges", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_OutEdges(), this.getEdge(), this.getEdge_Tail(), "outEdges", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVertex_Label(), ecorePackage.getEString(), "label", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVertex_Labels(), ecorePackage.getEString(), "labels", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEdge_Tail(), this.getVertex(), this.getVertex_OutEdges(), "tail", null, 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -425,6 +425,7 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.OBJECT);
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.STRING);
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.INTEGER);
+		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.BOOLEAN);
 
 		// Create resource
 		createResource(eNS_URI);

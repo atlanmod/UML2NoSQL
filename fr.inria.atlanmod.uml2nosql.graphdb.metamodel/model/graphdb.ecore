@@ -17,7 +17,7 @@
         eType="#//Edge" containment="true" eOpposite="#//Edge/head"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outEdges" upperBound="-1"
         eType="#//Edge" containment="true" eOpposite="#//Edge/tail"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labels" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//GraphElement">
@@ -38,5 +38,6 @@
     <eLiterals name="Object"/>
     <eLiterals name="String" value="1"/>
     <eLiterals name="Integer" value="2"/>
+    <eLiterals name="Boolean" value="3" literal="Boolean"/>
   </eClassifiers>
 </ecore:EPackage>

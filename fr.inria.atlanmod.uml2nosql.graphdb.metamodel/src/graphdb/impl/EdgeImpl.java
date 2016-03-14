@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.impl.EdgeImpl#getTail <em>Tail</em>}</li>
  *   <li>{@link graphdb.impl.EdgeImpl#getHead <em>Head</em>}</li>
  *   <li>{@link graphdb.impl.EdgeImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

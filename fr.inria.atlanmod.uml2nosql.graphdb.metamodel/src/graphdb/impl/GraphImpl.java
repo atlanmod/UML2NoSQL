@@ -27,11 +27,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link graphdb.impl.GraphImpl#getVertices <em>Vertices</em>}</li>
  *   <li>{@link graphdb.impl.GraphImpl#getEdges <em>Edges</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
