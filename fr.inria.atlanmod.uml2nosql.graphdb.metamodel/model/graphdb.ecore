@@ -4,9 +4,9 @@
     nsPrefix="graphdb">
   <eClassifiers xsi:type="ecore:EClass" name="Graph">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
-        eType="#//Vertex" containment="true"/>
+        eType="#//Vertex" containment="true" eOpposite="#//Vertex/graph"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
-        eType="#//Edge" containment="true"/>
+        eType="#//Edge" containment="true" eOpposite="#//Edge/graph"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
@@ -14,11 +14,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Vertex" eSuperTypes="#//GraphElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="inEdges" upperBound="-1"
-        eType="#//Edge" containment="true" eOpposite="#//Edge/head"/>
+        eType="#//Edge" eOpposite="#//Edge/head"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outEdges" upperBound="-1"
-        eType="#//Edge" containment="true" eOpposite="#//Edge/tail"/>
+        eType="#//Edge" eOpposite="#//Edge/tail"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labels" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"
+        eOpposite="#//Graph/vertices"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//GraphElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tail" eType="#//Vertex"
@@ -26,6 +29,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Vertex"
         eOpposite="#//Vertex/inEdges"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"
+        eOpposite="#//Graph/edges"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -33,7 +39,6 @@
         eOpposite="#//GraphElement/properties"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EdgeType"/>
   <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType" instanceTypeName="PrimitiveType">
     <eLiterals name="Object"/>
     <eLiterals name="String" value="1"/>

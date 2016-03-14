@@ -27,6 +27,7 @@ public interface Graph extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Vertices</b></em>' containment reference list.
 	 * The list contents are of type {@link graphdb.Vertex}.
+	 * It is bidirectional and its opposite is '{@link graphdb.Vertex#getGraph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Vertices</em>' containment reference list isn't clear,
@@ -35,7 +36,8 @@ public interface Graph extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Vertices</em>' containment reference list.
 	 * @see graphdb.GraphdbPackage#getGraph_Vertices()
-	 * @model containment="true"
+	 * @see graphdb.Vertex#getGraph
+	 * @model opposite="graph" containment="true"
 	 * @generated
 	 */
 	EList<Vertex> getVertices();
@@ -43,6 +45,7 @@ public interface Graph extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Edges</b></em>' containment reference list.
 	 * The list contents are of type {@link graphdb.Edge}.
+	 * It is bidirectional and its opposite is '{@link graphdb.Edge#getGraph <em>Graph</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Edges</em>' containment reference list isn't clear,
@@ -51,7 +54,8 @@ public interface Graph extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Edges</em>' containment reference list.
 	 * @see graphdb.GraphdbPackage#getGraph_Edges()
-	 * @model containment="true"
+	 * @see graphdb.Edge#getGraph
+	 * @model opposite="graph" containment="true"
 	 * @generated
 	 */
 	EList<Edge> getEdges();

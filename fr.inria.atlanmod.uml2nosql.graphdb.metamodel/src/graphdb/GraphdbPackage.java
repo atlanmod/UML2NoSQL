@@ -160,7 +160,7 @@ public interface GraphdbPackage extends EPackage {
 	int VERTEX__PROPERTIES = GRAPH_ELEMENT__PROPERTIES;
 
 	/**
-	 * The feature id for the '<em><b>In Edges</b></em>' containment reference list.
+	 * The feature id for the '<em><b>In Edges</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -169,7 +169,7 @@ public interface GraphdbPackage extends EPackage {
 	int VERTEX__IN_EDGES = GRAPH_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Out Edges</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Out Edges</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,13 +187,31 @@ public interface GraphdbPackage extends EPackage {
 	int VERTEX__LABELS = GRAPH_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX__NAME = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX__GRAPH = GRAPH_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+	int VERTEX_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Vertex</em>' class.
@@ -224,7 +242,7 @@ public interface GraphdbPackage extends EPackage {
 	int EDGE__PROPERTIES = GRAPH_ELEMENT__PROPERTIES;
 
 	/**
-	 * The feature id for the '<em><b>Tail</b></em>' container reference.
+	 * The feature id for the '<em><b>Tail</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -233,7 +251,7 @@ public interface GraphdbPackage extends EPackage {
 	int EDGE__TAIL = GRAPH_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Head</b></em>' container reference.
+	 * The feature id for the '<em><b>Head</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -251,13 +269,31 @@ public interface GraphdbPackage extends EPackage {
 	int EDGE__TYPE = GRAPH_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__NAME = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Graph</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDGE__GRAPH = GRAPH_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDGE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 3;
+	int EDGE_FEATURE_COUNT = GRAPH_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Edge</em>' class.
@@ -324,34 +360,6 @@ public interface GraphdbPackage extends EPackage {
 	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link graphdb.impl.EdgeTypeImpl <em>Edge Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see graphdb.impl.EdgeTypeImpl
-	 * @see graphdb.impl.GraphdbPackageImpl#getEdgeType()
-	 * @generated
-	 */
-	int EDGE_TYPE = 5;
-
-	/**
-	 * The number of structural features of the '<em>Edge Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE_TYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Edge Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDGE_TYPE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link graphdb.PrimitiveType <em>Primitive Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,7 +367,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getPrimitiveType()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPE = 6;
+	int PRIMITIVE_TYPE = 5;
 
 
 	/**
@@ -426,10 +434,10 @@ public interface GraphdbPackage extends EPackage {
 	EClass getVertex();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link graphdb.Vertex#getInEdges <em>In Edges</em>}'.
+	 * Returns the meta object for the reference list '{@link graphdb.Vertex#getInEdges <em>In Edges</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>In Edges</em>'.
+	 * @return the meta object for the reference list '<em>In Edges</em>'.
 	 * @see graphdb.Vertex#getInEdges()
 	 * @see #getVertex()
 	 * @generated
@@ -437,10 +445,10 @@ public interface GraphdbPackage extends EPackage {
 	EReference getVertex_InEdges();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link graphdb.Vertex#getOutEdges <em>Out Edges</em>}'.
+	 * Returns the meta object for the reference list '{@link graphdb.Vertex#getOutEdges <em>Out Edges</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Out Edges</em>'.
+	 * @return the meta object for the reference list '<em>Out Edges</em>'.
 	 * @see graphdb.Vertex#getOutEdges()
 	 * @see #getVertex()
 	 * @generated
@@ -459,6 +467,28 @@ public interface GraphdbPackage extends EPackage {
 	EAttribute getVertex_Labels();
 
 	/**
+	 * Returns the meta object for the attribute '{@link graphdb.Vertex#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see graphdb.Vertex#getName()
+	 * @see #getVertex()
+	 * @generated
+	 */
+	EAttribute getVertex_Name();
+
+	/**
+	 * Returns the meta object for the container reference '{@link graphdb.Vertex#getGraph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Graph</em>'.
+	 * @see graphdb.Vertex#getGraph()
+	 * @see #getVertex()
+	 * @generated
+	 */
+	EReference getVertex_Graph();
+
+	/**
 	 * Returns the meta object for class '{@link graphdb.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,10 +499,10 @@ public interface GraphdbPackage extends EPackage {
 	EClass getEdge();
 
 	/**
-	 * Returns the meta object for the container reference '{@link graphdb.Edge#getTail <em>Tail</em>}'.
+	 * Returns the meta object for the reference '{@link graphdb.Edge#getTail <em>Tail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Tail</em>'.
+	 * @return the meta object for the reference '<em>Tail</em>'.
 	 * @see graphdb.Edge#getTail()
 	 * @see #getEdge()
 	 * @generated
@@ -480,10 +510,10 @@ public interface GraphdbPackage extends EPackage {
 	EReference getEdge_Tail();
 
 	/**
-	 * Returns the meta object for the container reference '{@link graphdb.Edge#getHead <em>Head</em>}'.
+	 * Returns the meta object for the reference '{@link graphdb.Edge#getHead <em>Head</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Head</em>'.
+	 * @return the meta object for the reference '<em>Head</em>'.
 	 * @see graphdb.Edge#getHead()
 	 * @see #getEdge()
 	 * @generated
@@ -500,6 +530,28 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEdge_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link graphdb.Edge#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see graphdb.Edge#getName()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EAttribute getEdge_Name();
+
+	/**
+	 * Returns the meta object for the container reference '{@link graphdb.Edge#getGraph <em>Graph</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Graph</em>'.
+	 * @see graphdb.Edge#getGraph()
+	 * @see #getEdge()
+	 * @generated
+	 */
+	EReference getEdge_Graph();
 
 	/**
 	 * Returns the meta object for class '{@link graphdb.Property <em>Property</em>}'.
@@ -543,16 +595,6 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProperty_Owner();
-
-	/**
-	 * Returns the meta object for class '{@link graphdb.EdgeType <em>Edge Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Edge Type</em>'.
-	 * @see graphdb.EdgeType
-	 * @generated
-	 */
-	EClass getEdgeType();
 
 	/**
 	 * Returns the meta object for enum '{@link graphdb.PrimitiveType <em>Primitive Type</em>}'.
@@ -642,7 +684,7 @@ public interface GraphdbPackage extends EPackage {
 		EClass VERTEX = eINSTANCE.getVertex();
 
 		/**
-		 * The meta object literal for the '<em><b>In Edges</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>In Edges</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -650,7 +692,7 @@ public interface GraphdbPackage extends EPackage {
 		EReference VERTEX__IN_EDGES = eINSTANCE.getVertex_InEdges();
 
 		/**
-		 * The meta object literal for the '<em><b>Out Edges</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Out Edges</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -666,6 +708,22 @@ public interface GraphdbPackage extends EPackage {
 		EAttribute VERTEX__LABELS = eINSTANCE.getVertex_Labels();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VERTEX__NAME = eINSTANCE.getVertex_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Graph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX__GRAPH = eINSTANCE.getVertex_Graph();
+
+		/**
 		 * The meta object literal for the '{@link graphdb.impl.EdgeImpl <em>Edge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -676,7 +734,7 @@ public interface GraphdbPackage extends EPackage {
 		EClass EDGE = eINSTANCE.getEdge();
 
 		/**
-		 * The meta object literal for the '<em><b>Tail</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Tail</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -684,7 +742,7 @@ public interface GraphdbPackage extends EPackage {
 		EReference EDGE__TAIL = eINSTANCE.getEdge_Tail();
 
 		/**
-		 * The meta object literal for the '<em><b>Head</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Head</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -698,6 +756,22 @@ public interface GraphdbPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EDGE__TYPE = eINSTANCE.getEdge_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EDGE__NAME = eINSTANCE.getEdge_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Graph</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EDGE__GRAPH = eINSTANCE.getEdge_Graph();
 
 		/**
 		 * The meta object literal for the '{@link graphdb.impl.PropertyImpl <em>Property</em>}' class.
@@ -732,16 +806,6 @@ public interface GraphdbPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__OWNER = eINSTANCE.getProperty_Owner();
-
-		/**
-		 * The meta object literal for the '{@link graphdb.impl.EdgeTypeImpl <em>Edge Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see graphdb.impl.EdgeTypeImpl
-		 * @see graphdb.impl.GraphdbPackageImpl#getEdgeType()
-		 * @generated
-		 */
-		EClass EDGE_TYPE = eINSTANCE.getEdgeType();
 
 		/**
 		 * The meta object literal for the '{@link graphdb.PrimitiveType <em>Primitive Type</em>}' enum.

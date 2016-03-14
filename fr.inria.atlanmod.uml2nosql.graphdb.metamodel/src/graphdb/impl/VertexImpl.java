@@ -3,11 +3,13 @@
 package graphdb.impl;
 
 import graphdb.Edge;
+import graphdb.Graph;
 import graphdb.GraphdbPackage;
 import graphdb.Vertex;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,8 +17,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -30,13 +34,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link graphdb.impl.VertexImpl#getInEdges <em>In Edges</em>}</li>
  *   <li>{@link graphdb.impl.VertexImpl#getOutEdges <em>Out Edges</em>}</li>
  *   <li>{@link graphdb.impl.VertexImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link graphdb.impl.VertexImpl#getName <em>Name</em>}</li>
+ *   <li>{@link graphdb.impl.VertexImpl#getGraph <em>Graph</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VertexImpl extends GraphElementImpl implements Vertex {
 	/**
-	 * The cached value of the '{@link #getInEdges() <em>In Edges</em>}' containment reference list.
+	 * The cached value of the '{@link #getInEdges() <em>In Edges</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInEdges()
@@ -46,7 +52,7 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	protected EList<Edge> inEdges;
 
 	/**
-	 * The cached value of the '{@link #getOutEdges() <em>Out Edges</em>}' containment reference list.
+	 * The cached value of the '{@link #getOutEdges() <em>Out Edges</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutEdges()
@@ -64,6 +70,26 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	 * @ordered
 	 */
 	protected EList<String> labels;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,7 +117,7 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	 */
 	public EList<Edge> getInEdges() {
 		if (inEdges == null) {
-			inEdges = new EObjectContainmentWithInverseEList<Edge>(Edge.class, this, GraphdbPackage.VERTEX__IN_EDGES, GraphdbPackage.EDGE__HEAD);
+			inEdges = new EObjectWithInverseResolvingEList<Edge>(Edge.class, this, GraphdbPackage.VERTEX__IN_EDGES, GraphdbPackage.EDGE__HEAD);
 		}
 		return inEdges;
 	}
@@ -103,7 +129,7 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	 */
 	public EList<Edge> getOutEdges() {
 		if (outEdges == null) {
-			outEdges = new EObjectContainmentWithInverseEList<Edge>(Edge.class, this, GraphdbPackage.VERTEX__OUT_EDGES, GraphdbPackage.EDGE__TAIL);
+			outEdges = new EObjectWithInverseResolvingEList<Edge>(Edge.class, this, GraphdbPackage.VERTEX__OUT_EDGES, GraphdbPackage.EDGE__TAIL);
 		}
 		return outEdges;
 	}
@@ -125,6 +151,68 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphdbPackage.VERTEX__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Graph getGraph() {
+		if (eContainerFeatureID() != GraphdbPackage.VERTEX__GRAPH) return null;
+		return (Graph)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGraph(Graph newGraph, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newGraph, GraphdbPackage.VERTEX__GRAPH, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGraph(Graph newGraph) {
+		if (newGraph != eInternalContainer() || (eContainerFeatureID() != GraphdbPackage.VERTEX__GRAPH && newGraph != null)) {
+			if (EcoreUtil.isAncestor(this, newGraph))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newGraph != null)
+				msgs = ((InternalEObject)newGraph).eInverseAdd(this, GraphdbPackage.GRAPH__VERTICES, Graph.class, msgs);
+			msgs = basicSetGraph(newGraph, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphdbPackage.VERTEX__GRAPH, newGraph, newGraph));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -133,6 +221,10 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInEdges()).basicAdd(otherEnd, msgs);
 			case GraphdbPackage.VERTEX__OUT_EDGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutEdges()).basicAdd(otherEnd, msgs);
+			case GraphdbPackage.VERTEX__GRAPH:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetGraph((Graph)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -149,8 +241,24 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return ((InternalEList<?>)getInEdges()).basicRemove(otherEnd, msgs);
 			case GraphdbPackage.VERTEX__OUT_EDGES:
 				return ((InternalEList<?>)getOutEdges()).basicRemove(otherEnd, msgs);
+			case GraphdbPackage.VERTEX__GRAPH:
+				return basicSetGraph(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case GraphdbPackage.VERTEX__GRAPH:
+				return eInternalContainer().eInverseRemove(this, GraphdbPackage.GRAPH__VERTICES, Graph.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -167,6 +275,10 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return getOutEdges();
 			case GraphdbPackage.VERTEX__LABELS:
 				return getLabels();
+			case GraphdbPackage.VERTEX__NAME:
+				return getName();
+			case GraphdbPackage.VERTEX__GRAPH:
+				return getGraph();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,6 +304,12 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends String>)newValue);
 				return;
+			case GraphdbPackage.VERTEX__NAME:
+				setName((String)newValue);
+				return;
+			case GraphdbPackage.VERTEX__GRAPH:
+				setGraph((Graph)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,6 +331,12 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 			case GraphdbPackage.VERTEX__LABELS:
 				getLabels().clear();
 				return;
+			case GraphdbPackage.VERTEX__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case GraphdbPackage.VERTEX__GRAPH:
+				setGraph((Graph)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -231,6 +355,10 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 				return outEdges != null && !outEdges.isEmpty();
 			case GraphdbPackage.VERTEX__LABELS:
 				return labels != null && !labels.isEmpty();
+			case GraphdbPackage.VERTEX__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case GraphdbPackage.VERTEX__GRAPH:
+				return getGraph() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -247,6 +375,8 @@ public class VertexImpl extends GraphElementImpl implements Vertex {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labels: ");
 		result.append(labels);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

@@ -61,7 +61,6 @@ public class GraphdbFactoryImpl extends EFactoryImpl implements GraphdbFactory {
 			case GraphdbPackage.VERTEX: return createVertex();
 			case GraphdbPackage.EDGE: return createEdge();
 			case GraphdbPackage.PROPERTY: return createProperty();
-			case GraphdbPackage.EDGE_TYPE: return createEdgeType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -135,16 +134,6 @@ public class GraphdbFactoryImpl extends EFactoryImpl implements GraphdbFactory {
 	public Property createProperty() {
 		PropertyImpl property = new PropertyImpl();
 		return property;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EdgeType createEdgeType() {
-		EdgeTypeImpl edgeType = new EdgeTypeImpl();
-		return edgeType;
 	}
 
 	/**

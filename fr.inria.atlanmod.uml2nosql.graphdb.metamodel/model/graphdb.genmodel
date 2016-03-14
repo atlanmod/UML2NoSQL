@@ -23,17 +23,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Vertex/inEdges"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Vertex/outEdges"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Vertex/labels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Vertex/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Vertex/graph"/>
     </genClasses>
     <genClasses ecoreClass="graphdb.ecore#//Edge">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Edge/tail"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Edge/head"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Edge/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Edge/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Edge/graph"/>
     </genClasses>
     <genClasses ecoreClass="graphdb.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Property/key"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graphdb.ecore#//Property/owner"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graphdb.ecore#//Property/type"/>
     </genClasses>
-    <genClasses ecoreClass="graphdb.ecore#//EdgeType"/>
   </genPackages>
 </genmodel:GenModel>
