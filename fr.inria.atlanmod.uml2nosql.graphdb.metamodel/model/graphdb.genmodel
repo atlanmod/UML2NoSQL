@@ -16,6 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Graph/vertices"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//Graph/edges"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="graphdb.ecore#//Element"/>
     <genClasses image="false" ecoreClass="graphdb.ecore#//GraphElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graphdb.ecore#//GraphElement/properties"/>
     </genClasses>

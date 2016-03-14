@@ -3,6 +3,7 @@
 package graphdb.impl;
 
 import graphdb.Edge;
+import graphdb.Element;
 import graphdb.Graph;
 import graphdb.GraphElement;
 import graphdb.GraphdbFactory;
@@ -32,6 +33,13 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 	 * @generated
 	 */
 	private EClass graphEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +162,15 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 	 */
 	public EReference getGraph_Edges() {
 		return (EReference)graphEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getElement() {
+		return elementEClass;
 	}
 
 	/**
@@ -359,6 +376,8 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 		createEReference(graphEClass, GRAPH__VERTICES);
 		createEReference(graphEClass, GRAPH__EDGES);
 
+		elementEClass = createEClass(ELEMENT);
+
 		graphElementEClass = createEClass(GRAPH_ELEMENT);
 		createEReference(graphElementEClass, GRAPH_ELEMENT__PROPERTIES);
 
@@ -413,13 +432,17 @@ public class GraphdbPackageImpl extends EPackageImpl implements GraphdbPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		graphElementEClass.getESuperTypes().add(this.getElement());
 		vertexEClass.getESuperTypes().add(this.getGraphElement());
 		edgeEClass.getESuperTypes().add(this.getGraphElement());
+		propertyEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(graphEClass, Graph.class, "Graph", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraph_Vertices(), this.getVertex(), this.getVertex_Graph(), "vertices", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraph_Edges(), this.getEdge(), this.getEdge_Graph(), "edges", null, 0, -1, Graph.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(graphElementEClass, GraphElement.class, "GraphElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphElement_Properties(), this.getProperty(), this.getProperty_Owner(), "properties", null, 0, -1, GraphElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

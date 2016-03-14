@@ -72,6 +72,10 @@ public class GraphdbAdapterFactory extends AdapterFactoryImpl {
 				return createGraphAdapter();
 			}
 			@Override
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
+			}
+			@Override
 			public Adapter caseGraphElement(GraphElement object) {
 				return createGraphElementAdapter();
 			}
@@ -118,6 +122,20 @@ public class GraphdbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGraphAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link graphdb.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see graphdb.Element
+	 * @generated
+	 */
+	public Adapter createElementAdapter() {
 		return null;
 	}
 

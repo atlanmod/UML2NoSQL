@@ -104,6 +104,34 @@ public interface GraphdbPackage extends EPackage {
 	int GRAPH_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link graphdb.impl.ElementImpl <em>Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see graphdb.impl.ElementImpl
+	 * @see graphdb.impl.GraphdbPackageImpl#getElement()
+	 * @generated
+	 */
+	int ELEMENT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link graphdb.impl.GraphElementImpl <em>Graph Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,7 +139,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getGraphElement()
 	 * @generated
 	 */
-	int GRAPH_ELEMENT = 1;
+	int GRAPH_ELEMENT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -120,7 +148,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_ELEMENT__PROPERTIES = 0;
+	int GRAPH_ELEMENT__PROPERTIES = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Graph Element</em>' class.
@@ -129,7 +157,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_ELEMENT_FEATURE_COUNT = 1;
+	int GRAPH_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Graph Element</em>' class.
@@ -138,7 +166,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_ELEMENT_OPERATION_COUNT = 0;
+	int GRAPH_ELEMENT_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link graphdb.impl.VertexImpl <em>Vertex</em>}' class.
@@ -148,7 +176,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getVertex()
 	 * @generated
 	 */
-	int VERTEX = 2;
+	int VERTEX = 3;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -230,7 +258,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getEdge()
 	 * @generated
 	 */
-	int EDGE = 3;
+	int EDGE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -312,7 +340,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 4;
+	int PROPERTY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -321,7 +349,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__KEY = 0;
+	int PROPERTY__KEY = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
@@ -330,7 +358,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__OWNER = 1;
+	int PROPERTY__OWNER = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -339,7 +367,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__TYPE = 2;
+	int PROPERTY__TYPE = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Property</em>' class.
@@ -348,7 +376,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 3;
+	int PROPERTY_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -357,7 +385,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_OPERATION_COUNT = 0;
+	int PROPERTY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link graphdb.PrimitiveType <em>Primitive Type</em>}' enum.
@@ -367,7 +395,7 @@ public interface GraphdbPackage extends EPackage {
 	 * @see graphdb.impl.GraphdbPackageImpl#getPrimitiveType()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPE = 5;
+	int PRIMITIVE_TYPE = 6;
 
 
 	/**
@@ -401,6 +429,16 @@ public interface GraphdbPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGraph_Edges();
+
+	/**
+	 * Returns the meta object for class '{@link graphdb.Element <em>Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Element</em>'.
+	 * @see graphdb.Element
+	 * @generated
+	 */
+	EClass getElement();
 
 	/**
 	 * Returns the meta object for class '{@link graphdb.GraphElement <em>Graph Element</em>}'.
@@ -654,6 +692,16 @@ public interface GraphdbPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GRAPH__EDGES = eINSTANCE.getGraph_Edges();
+
+		/**
+		 * The meta object literal for the '{@link graphdb.impl.ElementImpl <em>Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see graphdb.impl.ElementImpl
+		 * @see graphdb.impl.GraphdbPackageImpl#getElement()
+		 * @generated
+		 */
+		EClass ELEMENT = eINSTANCE.getElement();
 
 		/**
 		 * The meta object literal for the '{@link graphdb.impl.GraphElementImpl <em>Graph Element</em>}' class.
