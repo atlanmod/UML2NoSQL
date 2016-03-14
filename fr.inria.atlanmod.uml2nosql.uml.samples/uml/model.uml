@@ -54,10 +54,14 @@
                 </ownedOperation>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_b3LwgIPSEeGsVZAesWUgWw" name="Vehicle" redefinedClassifier="_tRgUgIPhEeGsVZAesWUgWw">
+                <ownedAttribute xmi:id="_nmErMOnsEeWp3tjk8tKmgA" name="vehicleCount" isStatic="true" type="_YGTmEJ6QEeGdnpRmAZh-dQ"/>
+                <ownedAttribute xmi:id="_E91vEOnwEeWp3tjk8tKmgA" name="name" type="_VK2hkJ6QEeGdnpRmAZh-dQ"/>
                 <ownedOperation xmi:id="_RomGUJ6REeGdnpRmAZh-dQ" name="drive"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_Y67ngIPiEeGsVZAesWUgWw" name="Car">
                 <generalization xmi:id="_V5vLYJ6REeGdnpRmAZh-dQ" general="_b3LwgIPSEeGsVZAesWUgWw"/>
+                <ownedAttribute xmi:id="_asucYOn7EeWp3tjk8tKmgA" name="carCount" isStatic="true" type="_YGTmEJ6QEeGdnpRmAZh-dQ"/>
+                <ownedAttribute xmi:id="_6Iv-YOn7EeWp3tjk8tKmgA" name="carName" type="_VK2hkJ6QEeGdnpRmAZh-dQ"/>
                 <interfaceRealization xmi:id="_Yp5l4J6REeGdnpRmAZh-dQ" client="_Y67ngIPiEeGsVZAesWUgWw" supplier="_tRgUgIPhEeGsVZAesWUgWw" contract="_tRgUgIPhEeGsVZAesWUgWw"/>
               </packagedElement>
               <packagedElement xmi:type="uml:Class" xmi:id="_G4a9wJ6QEeGdnpRmAZh-dQ" name="Bicycle">
@@ -67,6 +71,31 @@
                 <generalization xmi:id="_d2dKUJ6REeGdnpRmAZh-dQ" general="_b3LwgIPSEeGsVZAesWUgWw"/>
                 <generalization xmi:id="_5ycdwOVGEeWPpIAIlzg-_w" general="_tRgUgIPhEeGsVZAesWUgWw"/>
                 <interfaceRealization xmi:id="_fXL9QJ6REeGdnpRmAZh-dQ" client="_IPXikJ6QEeGdnpRmAZh-dQ" supplier="_tRgUgIPhEeGsVZAesWUgWw" contract="_tRgUgIPhEeGsVZAesWUgWw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_stLI4OnhEeWp3tjk8tKmgA" name="SpecialCar">
+                <generalization xmi:id="_stLI4enhEeWp3tjk8tKmgA" general="_Y67ngIPiEeGsVZAesWUgWw"/>
+                <interfaceRealization xmi:id="_stLI4unhEeWp3tjk8tKmgA" client="_stLI4OnhEeWp3tjk8tKmgA" supplier="_tRgUgIPhEeGsVZAesWUgWw" contract="_tRgUgIPhEeGsVZAesWUgWw"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_-uqbkOnlEeWp3tjk8tKmgA" name="Man">
+                <generalization xmi:id="_-uqbkenlEeWp3tjk8tKmgA" general="__W1boJ6PEeGdnpRmAZh-dQ"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_N3xIsOnmEeWp3tjk8tKmgA" name="Woman">
+                <generalization xmi:id="_N3xIsenmEeWp3tjk8tKmgA" general="__W1boJ6PEeGdnpRmAZh-dQ"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_jbmRAOn7EeWp3tjk8tKmgA" name="AbstractClass" isAbstract="true">
+                <ownedAttribute xmi:id="_z8-YoOn7EeWp3tjk8tKmgA" name="name" type="_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Class" xmi:id="_qhofkOn7EeWp3tjk8tKmgA" name="ConcreteClass1">
+                <generalization xmi:id="_qhofken7EeWp3tjk8tKmgA" general="_jbmRAOn7EeWp3tjk8tKmgA"/>
+              </packagedElement>
+              <packagedElement xmi:type="uml:Association" xmi:id="_OzHUoOn8EeWp3tjk8tKmgA" name="uses" memberEnd="_OzHUoen8EeWp3tjk8tKmgA _OzHUo-n8EeWp3tjk8tKmgA">
+                <ownedEnd xmi:id="_OzHUoen8EeWp3tjk8tKmgA" name="user" type="_jbmRAOn7EeWp3tjk8tKmgA" association="_OzHUoOn8EeWp3tjk8tKmgA">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OzHUoun8EeWp3tjk8tKmgA"/>
+                </ownedEnd>
+                <ownedEnd xmi:id="_OzHUo-n8EeWp3tjk8tKmgA" name="used" type="_b3LwgIPSEeGsVZAesWUgWw" aggregation="composite" association="_OzHUoOn8EeWp3tjk8tKmgA">
+                  <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OzHUpOn8EeWp3tjk8tKmgA"/>
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OzHUpen8EeWp3tjk8tKmgA" value="*"/>
+                </ownedEnd>
               </packagedElement>
             </packagedElement>
           </packagedElement>

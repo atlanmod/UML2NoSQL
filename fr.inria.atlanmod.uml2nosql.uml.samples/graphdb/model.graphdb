@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <graphdb:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:graphdb="http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel">
-  <vertices>
+  <vertices inEdges="//@edges.22 //@edges.25 //@edges.28" outEdges="//@edges.7 //@edges.8 //@edges.9 //@edges.10 //@edges.11 //@edges.22 //@edges.23 //@edges.24" name="Person">
     <properties key="name" type="String"/>
     <properties key="firstName" type="String"/>
     <properties key="dateOfBirth"/>
@@ -9,19 +9,98 @@
     <properties key="hasJob" type="Boolean"/>
     <labels>Person</labels>
   </vertices>
-  <vertices>
+  <vertices inEdges="//@edges.7 //@edges.12 //@edges.17 //@edges.31" outEdges="//@edges.0" name="Vehicle">
+    <properties key="name" type="String"/>
     <labels>Vehicle</labels>
   </vertices>
-  <vertices>
+  <vertices inEdges="//@edges.8 //@edges.13 //@edges.18 //@edges.32" outEdges="//@edges.1 //@edges.2" name="Car">
+    <properties key="name" type="String"/>
+    <properties key="carName" type="String"/>
+    <labels>Vehicle</labels>
     <labels>Car</labels>
-    <labels>Vehicle</labels>
   </vertices>
-  <vertices>
+  <vertices inEdges="//@edges.9 //@edges.14 //@edges.19 //@edges.33" outEdges="//@edges.3" name="Bicycle">
+    <properties key="name" type="String"/>
     <labels>Vehicle</labels>
     <labels>Bicycle</labels>
   </vertices>
-  <vertices>
-    <labels>Vehicle</labels>
+  <vertices inEdges="//@edges.10 //@edges.15 //@edges.20 //@edges.34" outEdges="//@edges.4" name="Boat">
+    <properties key="name" type="String"/>
     <labels>Boat</labels>
+    <labels>Vehicle</labels>
   </vertices>
+  <vertices inEdges="//@edges.11 //@edges.16 //@edges.21 //@edges.35" outEdges="//@edges.5 //@edges.6" name="SpecialCar">
+    <properties key="name" type="String"/>
+    <properties key="carName" type="String"/>
+    <labels>SpecialCar</labels>
+    <labels>Vehicle</labels>
+    <labels>Car</labels>
+  </vertices>
+  <vertices inEdges="//@edges.23 //@edges.26 //@edges.29" outEdges="//@edges.12 //@edges.13 //@edges.14 //@edges.15 //@edges.16 //@edges.25 //@edges.26 //@edges.27" name="Man">
+    <properties key="name" type="String"/>
+    <properties key="firstName" type="String"/>
+    <properties key="dateOfBirth"/>
+    <properties key="emails" type="String"/>
+    <properties key="age" type="Integer"/>
+    <properties key="hasJob" type="Boolean"/>
+    <labels>Person</labels>
+    <labels>Man</labels>
+  </vertices>
+  <vertices inEdges="//@edges.24 //@edges.27 //@edges.30" outEdges="//@edges.17 //@edges.18 //@edges.19 //@edges.20 //@edges.21 //@edges.28 //@edges.29 //@edges.30" name="Woman">
+    <properties key="name" type="String"/>
+    <properties key="firstName" type="String"/>
+    <properties key="dateOfBirth"/>
+    <properties key="emails" type="String"/>
+    <properties key="age" type="Integer"/>
+    <properties key="hasJob" type="Boolean"/>
+    <labels>Woman</labels>
+    <labels>Person</labels>
+  </vertices>
+  <vertices outEdges="//@edges.31 //@edges.32 //@edges.33 //@edges.34 //@edges.35" name="ConcreteClass1">
+    <properties key="name" type="String"/>
+    <labels>ConcreteClass1</labels>
+    <labels>AbstractClass</labels>
+  </vertices>
+  <vertices inEdges="//@edges.0 //@edges.1 //@edges.3 //@edges.4 //@edges.5" name="Vehicle (static_fields)">
+    <properties key="vehicleCount" type="Integer"/>
+  </vertices>
+  <vertices inEdges="//@edges.2 //@edges.6" name="Car (static_fields)">
+    <properties key="carCount" type="Integer"/>
+  </vertices>
+  <edges tail="//@vertices.1" head="//@vertices.9" name="Vehicle_static"/>
+  <edges tail="//@vertices.2" head="//@vertices.9" name="Vehicle_static"/>
+  <edges tail="//@vertices.2" head="//@vertices.10" name="Car_static"/>
+  <edges tail="//@vertices.3" head="//@vertices.9" name="Vehicle_static"/>
+  <edges tail="//@vertices.4" head="//@vertices.9" name="Vehicle_static"/>
+  <edges tail="//@vertices.5" head="//@vertices.9" name="Vehicle_static"/>
+  <edges tail="//@vertices.5" head="//@vertices.10" name="Car_static"/>
+  <edges tail="//@vertices.0" head="//@vertices.1" type="owns" name="owns(Person->Vehicle)"/>
+  <edges tail="//@vertices.0" head="//@vertices.2" type="owns" name="owns(Person->Car)"/>
+  <edges tail="//@vertices.0" head="//@vertices.3" type="owns" name="owns(Person->Bicycle)"/>
+  <edges tail="//@vertices.0" head="//@vertices.4" type="owns" name="owns(Person->Boat)"/>
+  <edges tail="//@vertices.0" head="//@vertices.5" type="owns" name="owns(Person->SpecialCar)"/>
+  <edges tail="//@vertices.6" head="//@vertices.1" type="owns" name="owns(Man->Vehicle)"/>
+  <edges tail="//@vertices.6" head="//@vertices.2" type="owns" name="owns(Man->Car)"/>
+  <edges tail="//@vertices.6" head="//@vertices.3" type="owns" name="owns(Man->Bicycle)"/>
+  <edges tail="//@vertices.6" head="//@vertices.4" type="owns" name="owns(Man->Boat)"/>
+  <edges tail="//@vertices.6" head="//@vertices.5" type="owns" name="owns(Man->SpecialCar)"/>
+  <edges tail="//@vertices.7" head="//@vertices.1" type="owns" name="owns(Woman->Vehicle)"/>
+  <edges tail="//@vertices.7" head="//@vertices.2" type="owns" name="owns(Woman->Car)"/>
+  <edges tail="//@vertices.7" head="//@vertices.3" type="owns" name="owns(Woman->Bicycle)"/>
+  <edges tail="//@vertices.7" head="//@vertices.4" type="owns" name="owns(Woman->Boat)"/>
+  <edges tail="//@vertices.7" head="//@vertices.5" type="owns" name="owns(Woman->SpecialCar)"/>
+  <edges tail="//@vertices.0" head="//@vertices.0" type="a_parent_children" name="a_parent_children(Person->Person)"/>
+  <edges tail="//@vertices.0" head="//@vertices.6" type="a_parent_children" name="a_parent_children(Person->Man)"/>
+  <edges tail="//@vertices.0" head="//@vertices.7" type="a_parent_children" name="a_parent_children(Person->Woman)"/>
+  <edges tail="//@vertices.6" head="//@vertices.0" type="a_parent_children" name="a_parent_children(Man->Person)"/>
+  <edges tail="//@vertices.6" head="//@vertices.6" type="a_parent_children" name="a_parent_children(Man->Man)"/>
+  <edges tail="//@vertices.6" head="//@vertices.7" type="a_parent_children" name="a_parent_children(Man->Woman)"/>
+  <edges tail="//@vertices.7" head="//@vertices.0" type="a_parent_children" name="a_parent_children(Woman->Person)"/>
+  <edges tail="//@vertices.7" head="//@vertices.6" type="a_parent_children" name="a_parent_children(Woman->Man)"/>
+  <edges tail="//@vertices.7" head="//@vertices.7" type="a_parent_children" name="a_parent_children(Woman->Woman)"/>
+  <edges tail="//@vertices.8" head="//@vertices.1" type="uses" name="uses(ConcreteClass1->Vehicle)"/>
+  <edges tail="//@vertices.8" head="//@vertices.2" type="uses" name="uses(ConcreteClass1->Car)"/>
+  <edges tail="//@vertices.8" head="//@vertices.3" type="uses" name="uses(ConcreteClass1->Bicycle)"/>
+  <edges tail="//@vertices.8" head="//@vertices.4" type="uses" name="uses(ConcreteClass1->Boat)"/>
+  <edges tail="//@vertices.8" head="//@vertices.5" type="uses" name="uses(ConcreteClass1->SpecialCar)"/>
 </graphdb:Graph>
