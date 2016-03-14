@@ -40,10 +40,10 @@
         eOpposite="#//GraphElement/properties"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType" instanceTypeName="PrimitiveType">
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
     <eLiterals name="Object"/>
     <eLiterals name="String" value="1"/>
     <eLiterals name="Integer" value="2"/>
-    <eLiterals name="Boolean" value="3" literal="Boolean"/>
+    <eLiterals name="Boolean" value="3"/>
   </eClassifiers>
 </ecore:EPackage>
