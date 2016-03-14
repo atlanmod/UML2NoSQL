@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:graphdb="http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel">
+  <graphdb:Graph>
+    <vertices>
+      <properties key="name" type="String"/>
+      <properties key="firstName" type="String"/>
+      <properties key="dateOfBirth"/>
+      <properties key="emails" type="String"/>
+    </vertices>
+    <vertices/>
+    <vertices/>
+    <vertices/>
+    <vertices/>
+  </graphdb:Graph>
+  <graphdb:Property key="owner"/>
+  <graphdb:Property key="owned"/>
+  <graphdb:Property key="parent"/>
+  <graphdb:Property key="children"/>
+</xmi:XMI>

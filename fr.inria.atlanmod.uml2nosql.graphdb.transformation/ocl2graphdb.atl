@@ -1,0 +1,52 @@
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI Graph=http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel
+
+module ocl2graphdb;
+
+create OUT : Graph from IN : UML;
+
+helper def : getAllUMLClasses() : Sequence(UML!Class) = 
+	UML!Class.allInstances()
+;
+
+
+helper context UML!Property def : isStringProperty() : Boolean =
+	self.type.name = 'String'
+;
+
+rule Model2Graph {
+	from
+		model : UML!Model
+	to
+		graph : Graph!Graph (
+			vertices <- thisModule.getAllUMLClasses()
+		)
+}
+
+rule Class2Vertex {
+	from 
+		class : UML!Class
+	to
+		vertex : Graph!Vertex (
+			properties <- class.attribute
+		)
+}
+
+rule GenericProperty2Property {
+	from
+		umlProp : UML!Property 
+	to
+		vertex : Graph!Property (
+			key <- umlProp.name,
+			type <- #Object -- TODO + Error in generated code
+		)
+}
+
+rule StringProperty2Property extends GenericProperty2Property {
+	from
+		umlProp : UML!Property (umlProp.isStringProperty())
+	to
+		vertex : Graph!Property (
+			type <- #"String"	
+		)
+}

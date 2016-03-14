@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphdb" nsURI="http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel"
+    nsPrefix="graphdb">
+  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+        eType="#//Vertex" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true" eOpposite="#//Property/owner"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertex" eSuperTypes="#//GraphElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inEdges" upperBound="-1"
+        eType="#//Edge" containment="true" eOpposite="#//Edge/head"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outEdges" upperBound="-1"
+        eType="#//Edge" containment="true" eOpposite="#//Edge/tail"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//GraphElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tail" eType="#//Vertex"
+        eOpposite="#//Vertex/outEdges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Vertex"
+        eOpposite="#//Vertex/inEdges"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//GraphElement"
+        eOpposite="#//GraphElement/properties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeType"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType" instanceTypeName="PrimitiveType">
+    <eLiterals name="Object"/>
+    <eLiterals name="String" value="1"/>
+    <eLiterals name="Integer" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

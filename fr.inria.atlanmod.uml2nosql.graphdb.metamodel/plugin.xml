@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated graphdb -->
+      <package
+            uri="http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel"
+            class="graphdb.GraphdbPackage"
+            genModel="model/graphdb.genmodel"/>
+   </extension>
+
+</plugin>
