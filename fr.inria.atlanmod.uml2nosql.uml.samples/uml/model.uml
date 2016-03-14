@@ -14,6 +14,8 @@
                   <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_u1CAwJ6QEeGdnpRmAZh-dQ"/>
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ujLbwJ6QEeGdnpRmAZh-dQ" value="*"/>
                 </ownedAttribute>
+                <ownedAttribute xmi:id="_Bw7jcOnKEeWp3tjk8tKmgA" name="age" type="_YGTmEJ6QEeGdnpRmAZh-dQ"/>
+                <ownedAttribute xmi:id="_XA3E4OnKEeWp3tjk8tKmgA" name="hasJob" type="_WcB1kJ6QEeGdnpRmAZh-dQ"/>
                 <ownedOperation xmi:id="_kf6AAJ6QEeGdnpRmAZh-dQ" name="getAge">
                   <ownedComment xmi:id="_AuNo0J6REeGdnpRmAZh-dQ">
                     <body>Calculate the age from the birthdate to now.</body>

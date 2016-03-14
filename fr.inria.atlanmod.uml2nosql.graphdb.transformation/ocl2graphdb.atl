@@ -9,9 +9,33 @@ helper def : getAllUMLClasses() : Sequence(UML!Class) =
 	UML!Class.allInstances()
 ;
 
+-- Return all the super class of self
+-- Since Ecore allows multiple inheritance, the list of super classes is processed 
+-- to retrieve recursively all the parents
+-- Returns a Set(UML!Class) containing all the super classes of self, without duplicates
+helper context UML!Class def : getClassHierarchy() : Set(UML!Class) = 
+	let res : Set(UML!Class) = Set{self} in
+		if(self.superClass.oclIsUndefined()) then
+			res
+		else
+			res.union(self.superClass->collect(sc | sc.getClassHierarchy())->flatten()).debug('Class Hierarchy: ')
+		endif
+;
+
+helper context UML!Property def : isClassProperty() : Boolean =
+	self.refImmediateComposite().oclIsTypeOf(UML!Class)
+;
 
 helper context UML!Property def : isStringProperty() : Boolean =
 	self.type.name = 'String'
+;
+
+helper context UML!Property def : isIntegerProperty() : Boolean =
+	self.type.name = 'Integer'
+;
+
+helper context UML!Property def : isBooleanProperty() : Boolean =
+	self.type.name = 'Boolean'
 ;
 
 rule Model2Graph {
@@ -28,17 +52,22 @@ rule Class2Vertex {
 		class : UML!Class
 	to
 		vertex : Graph!Vertex (
-			properties <- class.attribute
+			properties <- class.attribute,
+			labels <- class.getClassHierarchy()->collect(cc | cc.name)
 		)
 }
 
+-- Transforms an UML Class Property into a Graph Property
+-- Generic implementation creates an Object Property. If the property type is known
+-- by the transformation then a specific typed property is created by sub-rules
 rule GenericProperty2Property {
 	from
-		umlProp : UML!Property 
+		umlProp : UML!Property (umlProp.isClassProperty().debug())
 	to
 		vertex : Graph!Property (
-			key <- umlProp.name,
-			type <- #Object -- TODO + Error in generated code
+			key <- umlProp.name.debug(),
+			-- Does not appear in the generated XMI because #Object is the default literal
+			type <- #Object.debug()
 		)
 }
 
@@ -48,5 +77,23 @@ rule StringProperty2Property extends GenericProperty2Property {
 	to
 		vertex : Graph!Property (
 			type <- #"String"	
+		)
+}
+
+rule IntegerProperty2Property extends GenericProperty2Property {
+	from
+		umlProp : UML!Property (umlProp.isIntegerProperty())
+	to
+		vertex : Graph!Property (
+			type <- #"Integer"	
+		)
+}
+
+rule BooleanProperty2Property extends GenericProperty2Property {
+	from
+		umlProp : UML!Property (umlProp.isBooleanProperty())
+	to
+		vertex : Graph!Property (
+			type <- #"Boolean"	
 		)
 }
