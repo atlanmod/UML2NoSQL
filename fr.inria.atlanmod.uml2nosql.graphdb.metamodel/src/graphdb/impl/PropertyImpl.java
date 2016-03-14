@@ -53,6 +53,16 @@ public class PropertyImpl extends ElementImpl implements Property {
 	protected String key = KEY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final PrimitiveType TYPE_EDEFAULT = PrimitiveType.OBJECT;
+
+	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -60,7 +70,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * @generated
 	 * @ordered
 	 */
-	protected PrimitiveType type;
+	protected PrimitiveType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,7 +128,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 */
 	public void setType(PrimitiveType newType) {
 		PrimitiveType oldType = type;
-		type = newType == null ? null : newType;
+		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GraphdbPackage.PROPERTY__TYPE, oldType, type));
 	}
@@ -262,7 +272,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 				setOwner((GraphElement)null);
 				return;
 			case GraphdbPackage.PROPERTY__TYPE:
-				setType((PrimitiveType)null);
+				setType(TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -281,7 +291,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 			case GraphdbPackage.PROPERTY__OWNER:
 				return getOwner() != null;
 			case GraphdbPackage.PROPERTY__TYPE:
-				return type != null;
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -39,7 +39,7 @@ public interface GraphdbPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel";
+	String eNS_URI = "fr.inria.atlanmod.uml2nosql.graphdb.metamodel";
 
 	/**
 	 * The package namespace name.

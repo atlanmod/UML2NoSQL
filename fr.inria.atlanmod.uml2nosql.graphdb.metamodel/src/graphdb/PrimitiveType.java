@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * @see graphdb.GraphdbPackage#getPrimitiveType()
- * @model instanceClass="graphdb.PrimitiveType"
+ * @model
  * @generated
  */
 public enum PrimitiveType implements Enumerator {

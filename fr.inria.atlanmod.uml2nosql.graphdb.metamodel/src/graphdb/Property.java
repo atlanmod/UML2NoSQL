@@ -60,7 +60,7 @@ public interface Property extends Element {
 	 * @see graphdb.PrimitiveType
 	 * @see #setType(PrimitiveType)
 	 * @see graphdb.GraphdbPackage#getProperty_Type()
-	 * @model dataType="graphdb.PrimitiveType"
+	 * @model
 	 * @generated
 	 */
 	PrimitiveType getType();
