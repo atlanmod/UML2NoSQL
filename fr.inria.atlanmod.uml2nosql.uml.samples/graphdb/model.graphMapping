@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<graphdbMapping:MappingDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:graphdbMapping="fr.inria.atlanmod.uml2nosql.graphdb.mapping.metamodel">
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_nmErMOnsEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.9/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_asucYOn7EeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.10/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jEpi8J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.0/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jm9l0J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.0/@properties.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <graphElements href="model.graphdb#//@vertices.0/@properties.2"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jznhwJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.0/@properties.3"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_Bw7jcOnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.0/@properties.4"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_XA3E4OnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.0/@properties.5"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jEpi8J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.6/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jm9l0J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.6/@properties.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <graphElements href="model.graphdb#//@vertices.6/@properties.2"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jznhwJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.6/@properties.3"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_Bw7jcOnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.6/@properties.4"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_XA3E4OnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.6/@properties.5"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.6"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jEpi8J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.7/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jm9l0J6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.7/@properties.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <graphElements href="model.graphdb#//@vertices.7/@properties.2"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_jznhwJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.7/@properties.3"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_Bw7jcOnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.7/@properties.4"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_XA3E4OnKEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.7/@properties.5"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.7"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_z8-YoOn7EeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.8/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.8"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_E91vEOnwEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.1/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_b3LwgIPSEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@vertices.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_E91vEOnwEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.2/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_6Iv-YOn7EeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.2/@properties.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_Y67ngIPiEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@vertices.2"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_E91vEOnwEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.3/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_G4a9wJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.3"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_E91vEOnwEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.4/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_IPXikJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@vertices.4"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_E91vEOnwEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.5/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_6Iv-YOn7EeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.5/@properties.1"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:ClassMapping">
+    <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@vertices.5"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_b3LwgIPSEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.7"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_Y67ngIPiEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.8"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_G4a9wJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.9"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_IPXikJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.10"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.11"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_b3LwgIPSEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.12"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_Y67ngIPiEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.13"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_G4a9wJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.14"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_IPXikJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.15"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.16"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_b3LwgIPSEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.17"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_Y67ngIPiEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.18"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_G4a9wJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.19"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_IPXikJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.20"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_i6o14J6REeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.21"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.22"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.23"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.24"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.25"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.26"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.27"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#__W1boJ6PEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.28"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.29"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_1jhAEJ6SEeGdnpRmAZh-dQ"/>
+    <umlElements href="../uml/model.uml#_N3xIsOnmEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.30"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_OzHUoOn8EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_b3LwgIPSEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.31"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_OzHUoOn8EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_Y67ngIPiEeGsVZAesWUgWw"/>
+    <graphElements href="model.graphdb#//@edges.32"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_OzHUoOn8EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_G4a9wJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.33"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_OzHUoOn8EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_IPXikJ6QEeGdnpRmAZh-dQ"/>
+    <graphElements href="model.graphdb#//@edges.34"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_OzHUoOn8EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.35"/>
+  </definitions>
+</graphdbMapping:MappingDefinition>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<graphdb:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:graphdb="http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel">
+<graphdb:Graph xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:graphdb="fr.inria.atlanmod.uml2nosql.graphdb.metamodel">
   <vertices inEdges="//@edges.22 //@edges.25 //@edges.28" outEdges="//@edges.7 //@edges.8 //@edges.9 //@edges.10 //@edges.11 //@edges.22 //@edges.23 //@edges.24" name="Person">
     <properties key="name" type="String"/>
     <properties key="firstName" type="String"/>
@@ -21,8 +21,8 @@
   </vertices>
   <vertices inEdges="//@edges.9 //@edges.14 //@edges.19 //@edges.33" outEdges="//@edges.3" name="Bicycle">
     <properties key="name" type="String"/>
-    <labels>Vehicle</labels>
     <labels>Bicycle</labels>
+    <labels>Vehicle</labels>
   </vertices>
   <vertices inEdges="//@edges.10 //@edges.15 //@edges.20 //@edges.34" outEdges="//@edges.4" name="Boat">
     <properties key="name" type="String"/>
@@ -43,8 +43,8 @@
     <properties key="emails" type="String"/>
     <properties key="age" type="Integer"/>
     <properties key="hasJob" type="Boolean"/>
-    <labels>Person</labels>
     <labels>Man</labels>
+    <labels>Person</labels>
   </vertices>
   <vertices inEdges="//@edges.24 //@edges.27 //@edges.30" outEdges="//@edges.17 //@edges.18 //@edges.19 //@edges.20 //@edges.21 //@edges.28 //@edges.29 //@edges.30" name="Woman">
     <properties key="name" type="String"/>

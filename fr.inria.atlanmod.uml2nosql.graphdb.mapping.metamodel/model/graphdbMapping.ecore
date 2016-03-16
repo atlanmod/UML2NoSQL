@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graphdbMapping" nsURI="fr.inria.atlanmod.uml2nosql.graphdb.mapping.metamodel"
+    nsPrefix="graphdbMapping">
+  <eClassifiers xsi:type="ecore:EClass" name="MappingDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
+        eType="#//Mapping" containment="true" eOpposite="#//Mapping/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mapping" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="umlElements" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphElements" upperBound="-1"
+        eType="ecore:EClass ../../fr.inria.atlanmod.uml2nosql.graphdb.metamodel/model/graphdb.ecore#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MappingDefinition"
+        eOpposite="#//MappingDefinition/definitions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassMapping" eSuperTypes="#//Mapping"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyMapping" eSuperTypes="#//Mapping"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationMapping" eSuperTypes="#//Mapping"/>
+</ecore:EPackage>

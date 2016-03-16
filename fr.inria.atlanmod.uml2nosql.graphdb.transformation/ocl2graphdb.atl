@@ -1,9 +1,10 @@
 -- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
--- @nsURI Graph=http://fr.inria.atlanmod.uml2nosql.graphdb.metamodel
+-- @nsURI Graph=fr.inria.atlanmod.uml2nosql.graphdb.metamodel
+-- @nsURI GraphMapping=fr.inria.atlanmod.uml2nosql.graphdb.mapping.metamodel
 
 module ocl2graphdb;
 
-create OUT : Graph from IN : UML;
+create OUT : Graph, OUT2 : GraphMapping from IN : UML;
 
 --
 -- Module Helpers
@@ -156,6 +157,10 @@ rule Model2Graph {
 			-- between associations and classes, in order to generate subclass related relationships
 			-- Association bindings for static nodes is also done at the edge creation, because it is dependent 
 			-- of the number of classes in the hierarchy (one static edge per concrete subclass)
+		),
+		-- Generate the top-level container for the mapping definitions
+		gMapping : GraphMapping!MappingDefinition (
+			
 		)
 }
 
@@ -163,12 +168,21 @@ rule Model2Graph {
 -- Class Transformation
 --
 
+helper def : id : Integer = 1;
+
 rule ConcreteClass2Vertex {
 	from
 		class : UML!Class (not(class.isAbstract))
 	to
 		-- Empty vertex is used only for inheritance purposes
-		vertex : Graph!Vertex ()
+		vertex : Graph!Vertex (),
+		-- Create the ClassMapping associated to the rule
+		cMapping : GraphMapping!ClassMapping (
+			-- umlElements can not be set here, because the engine will resolve it as
+			-- a vertex. It is done in imperative block (si sub-rules)
+			graphElements <- vertex,
+			parent <- thisModule.resolveTemp(class.getContainingModel(),'gMapping')
+		)
 }
 
 -- Transform a class that does not have static properties in its hierarchy into a regular
@@ -184,6 +198,9 @@ rule ClassNoStaticPart2Vertex extends ConcreteClass2Vertex {
 			properties <- class.getNonStaticAttributesInHierarchy()->collect(att | thisModule.GenericProperty2Property(att)),
 			labels <- class.getClassHierarchy()->collect(cc | cc.name)
 		)
+	do {
+		cMapping.umlElements <- class;	
+	}
 }
 
 -- Transform a class that has static properties in its hierarchy into a regular
@@ -201,6 +218,9 @@ rule ClassWithStaticPart2Vertex extends ConcreteClass2Vertex {
 			labels <- class.getClassHierarchy()->collect(cc | cc.name),
 			outEdges <- class.getStaticAttributesInHierarchy()->collect(att | thisModule.StaticProperty2StaticEdge(att))	
 		)
+	do {
+		cMapping.umlElements <- class;	
+	}
 }
 
 -- Generate a vertex that stores static fields of a class
@@ -239,6 +259,10 @@ lazy rule GenericProperty2Property {
 			key <- umlProp.name,
 			-- Does not appear in the generated XMI because #Object is the default literal
 			type <- #Object
+		),
+		pMapping : GraphMapping!PropertyMapping (
+			graphElements <- vertex,
+			parent <- thisModule.resolveTemp(umlProp.getContainingModel(), 'gMapping')
 		)
 }
 
@@ -249,6 +273,9 @@ lazy rule StringProperty2Property extends GenericProperty2Property {
 		vertex : Graph!Property (
 			type <- #"String"	
 		)
+	do {
+		pMapping.umlElements <- umlProp;	
+	}
 }
 
 lazy rule IntegerProperty2Property extends GenericProperty2Property {
@@ -258,6 +285,9 @@ lazy rule IntegerProperty2Property extends GenericProperty2Property {
 		vertex : Graph!Property (
 			type <- #"Integer"	
 		)
+	do {
+		pMapping.umlElements <- umlProp;
+	}
 }
 
 lazy rule BooleanProperty2Property extends GenericProperty2Property {
@@ -267,6 +297,9 @@ lazy rule BooleanProperty2Property extends GenericProperty2Property {
 		vertex : Graph!Property (
 			type <- #"Boolean"	
 		)
+	do {
+		pMapping.umlElements <- umlProp;	
+	}
 }
 
 --
@@ -289,5 +322,12 @@ rule Association2Edge {
 			tail <- class1,
 			head <- class2,
 			graph <- asso.getContainingModel()
+		),
+		aMapping : GraphMapping!AssociationMapping (
+			graphElements <- edge,
+			parent <- thisModule.resolveTemp(asso.getContainingModel(), 'gMapping')
 		)
+	do {
+		aMapping.umlElements <- Sequence{asso,class1,class2};
+	}
 }
