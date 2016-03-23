@@ -26,25 +26,25 @@
   </vertices>
   <vertices inEdges="//@edges.10 //@edges.15 //@edges.20 //@edges.34" outEdges="//@edges.4" name="Boat">
     <properties key="name" type="String"/>
-    <labels>Boat</labels>
     <labels>Vehicle</labels>
+    <labels>Boat</labels>
   </vertices>
   <vertices inEdges="//@edges.11 //@edges.16 //@edges.21 //@edges.35" outEdges="//@edges.5 //@edges.6" name="SpecialCar">
     <properties key="name" type="String"/>
     <properties key="carName" type="String"/>
-    <labels>SpecialCar</labels>
     <labels>Vehicle</labels>
     <labels>Car</labels>
+    <labels>SpecialCar</labels>
   </vertices>
-  <vertices inEdges="//@edges.23 //@edges.26 //@edges.29" outEdges="//@edges.12 //@edges.13 //@edges.14 //@edges.15 //@edges.16 //@edges.25 //@edges.26 //@edges.27" name="Man">
+  <vertices inEdges="//@edges.23 //@edges.26 //@edges.29 //@edges.36" outEdges="//@edges.12 //@edges.13 //@edges.14 //@edges.15 //@edges.16 //@edges.25 //@edges.26 //@edges.27" name="Man">
     <properties key="name" type="String"/>
     <properties key="firstName" type="String"/>
     <properties key="dateOfBirth"/>
     <properties key="emails" type="String"/>
     <properties key="age" type="Integer"/>
     <properties key="hasJob" type="Boolean"/>
-    <labels>Man</labels>
     <labels>Person</labels>
+    <labels>Man</labels>
   </vertices>
   <vertices inEdges="//@edges.24 //@edges.27 //@edges.30" outEdges="//@edges.17 //@edges.18 //@edges.19 //@edges.20 //@edges.21 //@edges.28 //@edges.29 //@edges.30" name="Woman">
     <properties key="name" type="String"/>
@@ -53,13 +53,13 @@
     <properties key="emails" type="String"/>
     <properties key="age" type="Integer"/>
     <properties key="hasJob" type="Boolean"/>
-    <labels>Woman</labels>
     <labels>Person</labels>
+    <labels>Woman</labels>
   </vertices>
-  <vertices outEdges="//@edges.31 //@edges.32 //@edges.33 //@edges.34 //@edges.35" name="ConcreteClass1">
+  <vertices outEdges="//@edges.31 //@edges.32 //@edges.33 //@edges.34 //@edges.35 //@edges.36" name="ConcreteClass1">
     <properties key="name" type="String"/>
-    <labels>ConcreteClass1</labels>
     <labels>AbstractClass</labels>
+    <labels>ConcreteClass1</labels>
   </vertices>
   <vertices inEdges="//@edges.0 //@edges.1 //@edges.3 //@edges.4 //@edges.5" name="Vehicle (static_fields)">
     <properties key="vehicleCount" type="Integer"/>
@@ -103,4 +103,7 @@
   <edges tail="//@vertices.8" head="//@vertices.3" type="uses" name="uses(ConcreteClass1->Bicycle)"/>
   <edges tail="//@vertices.8" head="//@vertices.4" type="uses" name="uses(ConcreteClass1->Boat)"/>
   <edges tail="//@vertices.8" head="//@vertices.5" type="uses" name="uses(ConcreteClass1->SpecialCar)"/>
+  <edges tail="//@vertices.8" head="//@vertices.6" type="AssociationClass" name="AssociationClass(ConcreteClass1->Man)">
+    <properties key="ac_attribute" type="String"/>
+  </edges>
 </graphdb:Graph>

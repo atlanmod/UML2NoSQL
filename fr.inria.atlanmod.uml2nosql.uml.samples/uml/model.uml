@@ -97,6 +97,15 @@
                   <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OzHUpen8EeWp3tjk8tKmgA" value="*"/>
                 </ownedEnd>
               </packagedElement>
+              <packagedElement xmi:type="uml:AssociationClass" xmi:id="_z4bZ0PDgEeWzJ9HsnZwlqg" name="AssociationClass" memberEnd="_Y3pCIPDiEeWzJ9HsnZwlqg _f_WEoPDiEeWzJ9HsnZwlqg" navigableOwnedEnd="_f_WEoPDiEeWzJ9HsnZwlqg">
+                <ownedAttribute xmi:id="_3WZDkPDiEeWzJ9HsnZwlqg" name="ac_attribute" type="_VK2hkJ6QEeGdnpRmAZh-dQ"/>
+                <ownedEnd xmi:id="_Y3pCIPDiEeWzJ9HsnZwlqg" name="concreteClass1" type="_qhofkOn7EeWp3tjk8tKmgA" association="_z4bZ0PDgEeWzJ9HsnZwlqg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d_d3kPDiEeWzJ9HsnZwlqg" value="*"/>
+                </ownedEnd>
+                <ownedEnd xmi:id="_f_WEoPDiEeWzJ9HsnZwlqg" name="man" type="_-uqbkOnlEeWp3tjk8tKmgA" association="_z4bZ0PDgEeWzJ9HsnZwlqg">
+                  <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_jbSAAPDiEeWzJ9HsnZwlqg" value="*"/>
+                </ownedEnd>
+              </packagedElement>
             </packagedElement>
           </packagedElement>
         </packagedElement>

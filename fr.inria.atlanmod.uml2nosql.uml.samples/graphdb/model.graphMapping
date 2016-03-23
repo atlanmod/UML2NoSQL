@@ -316,4 +316,14 @@
     <umlElements href="../uml/model.uml#_stLI4OnhEeWp3tjk8tKmgA"/>
     <graphElements href="model.graphdb#//@edges.35"/>
   </definitions>
+  <definitions xsi:type="graphdbMapping:PropertyMapping">
+    <umlElements href="../uml/model.uml#_3WZDkPDiEeWzJ9HsnZwlqg"/>
+    <graphElements href="model.graphdb#//@edges.36/@properties.0"/>
+  </definitions>
+  <definitions xsi:type="graphdbMapping:AssociationMapping">
+    <umlElements href="../uml/model.uml#_z4bZ0PDgEeWzJ9HsnZwlqg"/>
+    <umlElements href="../uml/model.uml#_qhofkOn7EeWp3tjk8tKmgA"/>
+    <umlElements href="../uml/model.uml#_-uqbkOnlEeWp3tjk8tKmgA"/>
+    <graphElements href="model.graphdb#//@edges.36"/>
+  </definitions>
 </graphdbMapping:MappingDefinition>

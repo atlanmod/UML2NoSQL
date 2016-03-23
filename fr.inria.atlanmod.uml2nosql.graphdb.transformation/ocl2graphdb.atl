@@ -151,8 +151,9 @@ rule Model2Graph {
 		model : UML!Model
 	to
 		graph : Graph!Graph (
-			vertices <- thisModule.getAllNotAbstractUMLClasses()
-				->union(thisModule.getAllClassesWithStaticField()->collect(cc | thisModule.ClassStaticPart2Vertex(cc)))
+			vertices <- thisModule.getAllNotAbstractUMLClasses()->select(cc | not(cc.oclIsTypeOf(UML!AssociationClass)))
+				->union(thisModule.getAllClassesWithStaticField()->select(cc | not(cc.oclIsTypeOf(UML!AssociationClass)))->
+					collect(cc | thisModule.ClassStaticPart2Vertex(cc)))
 			-- Note: association bindings are not done here, they are performed by the cartesian product
 			-- between associations and classes, in order to generate subclass related relationships
 			-- Association bindings for static nodes is also done at the edge creation, because it is dependent 
@@ -168,11 +169,9 @@ rule Model2Graph {
 -- Class Transformation
 --
 
-helper def : id : Integer = 1;
-
 rule ConcreteClass2Vertex {
 	from
-		class : UML!Class (not(class.isAbstract))
+		class : UML!Class (not(class.oclIsTypeOf(UML!AssociationClass)) and not(class.isAbstract))
 	to
 		-- Empty vertex is used only for inheritance purposes
 		vertex : Graph!Vertex (),
@@ -190,7 +189,7 @@ rule ConcreteClass2Vertex {
 -- Note: the default implementation add to subclasses each properties inherited from its parents
 rule ClassNoStaticPart2Vertex extends ConcreteClass2Vertex {
 	from 
-		class : UML!Class (class.getStaticAttributesInHierarchy()->size() = 0)
+		class : UML!Class (not(class.oclIsTypeOf(UML!AssociationClass)) and class.getStaticAttributesInHierarchy()->size() = 0)
 	to
 		vertex : Graph!Vertex (
 			name <- class.name,
@@ -209,7 +208,7 @@ rule ClassNoStaticPart2Vertex extends ConcreteClass2Vertex {
 -- of a type (not its hierarchy)
 rule ClassWithStaticPart2Vertex extends ConcreteClass2Vertex {
 	from
-		class : UML!Class (class.getStaticAttributesInHierarchy()->size() > 0)
+		class : UML!Class (not(class.oclIsTypeOf(UML!AssociationClass)) and class.getStaticAttributesInHierarchy()->size() > 0)
 	to
 		vertex : Graph!Vertex (
 			name <- class.name,
@@ -321,7 +320,8 @@ rule Association2Edge {
 			type <- asso.name,	
 			tail <- class1,
 			head <- class2,
-			graph <- asso.getContainingModel()
+			graph <- asso.getContainingModel(),
+			properties <- asso.attribute->collect(at | thisModule.GenericProperty2Property(at))
 		),
 		aMapping : GraphMapping!AssociationMapping (
 			graphElements <- edge,
