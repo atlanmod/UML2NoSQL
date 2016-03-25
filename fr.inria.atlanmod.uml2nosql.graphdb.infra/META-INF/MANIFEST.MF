@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Infra
+Bundle-SymbolicName: fr.inria.atlanmod.uml2nosql.graphdb.infra
+Bundle-Version: 1.0.0.qualifier
+Export-Package: fr.inria.atlanmod.uml2nosql.graphdb.infra
+Bundle-ClassPath: lib/,
+ .
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
