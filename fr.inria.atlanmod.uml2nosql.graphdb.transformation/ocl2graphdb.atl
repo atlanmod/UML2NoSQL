@@ -305,6 +305,12 @@ lazy rule BooleanProperty2Property extends GenericProperty2Property {
 -- Association Transformation
 --
 
+-- TODO this kind of rule only handles binary associations. To be more complete it should also handle
+-- associations with n ends. But it should be move to a dedicated rule that compute an edge from an association, and
+-- is called for each subclasses involved in it
+-- Change it to a lazy rule, and call it on tuples that represent each possible type involved in the transformation
+
+-- Note: the rule also transforms AssociationClasses, by setting their attributes as node attributes
 rule Association2Edge {
 	from
 		asso : UML!Association,
