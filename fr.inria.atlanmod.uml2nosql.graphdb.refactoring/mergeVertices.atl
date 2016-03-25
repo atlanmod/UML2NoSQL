@@ -1,0 +1,124 @@
+-- @nsURI UML=http://www.eclipse.org/uml2/5.0.0/UML
+-- @nsURI Graph=fr.inria.atlanmod.uml2nosql.graphdb.metamodel
+-- @nsURI GraphMapping=fr.inria.atlanmod.uml2nosql.graphdb.mapping.metamodel
+
+-- @atlcompiler atl2010
+
+--
+-- Handle the MergeVertices refactoring operation
+-- The refactoring takes two vertices and merge them into a single one.
+-- Properties from both vertices are merged, and connected edges are updated to ensure consistency
+-- Duplicate edges are removed (for example inherited edges, or edges from two vertices going to the same vertex with the same type)
+-- 
+
+-- TODO handle merging of static nodes
+module mergeVertices;
+
+create OUT : Graph refining IN : Graph;
+
+helper def : receivingClass : String = 'Vehicle';
+helper def : mergedClass : String = 'Car';
+
+helper def : getV1() : Graph!Vertex = 
+	Graph!Vertex.allInstances()->select(vv | vv.name = thisModule.receivingClass)->first()
+;
+
+helper def : getV2() : Graph!Vertex =
+	Graph!Vertex.allInstances()->select(vv | vv.name = thisModule.mergedClass)->first()
+;
+
+helper def : removeDuplicates(input : Sequence(Graph!Edge)) : Sequence(Graph!Edge) =
+		input.debug('input:')->iterate(ee; r : Sequence(Graph!Edge) = Sequence{} |
+			if(thisModule.getDuplicatedOutEdge().includes(ee) or
+					thisModule.getDuplicatedInEdge().includes(ee)) then
+				r->union(Sequence{})
+			else
+				r->append(ee.debug())
+			endif
+		)
+;
+
+helper def : removePropertyDuplicates(input : Sequence(Graph!Property)) : Sequence(Graph!Property) = 
+	input.debug('input:')->iterate(ee; r : Sequence(Graph!Edge) = Sequence{} |
+			if(thisModule.getDupProp().includes(ee) or
+					thisModule.getDuplicatedInEdge().includes(ee)) then
+				r->union(Sequence{})
+			else
+				r->append(ee.debug())
+			endif
+		)
+;
+
+helper def : getDuplicatedOutEdge() : Set(Graph!Edge) =
+	thisModule.getDuplicates(thisModule.getV1().outEdges->union(thisModule.getV2().outEdges))	
+;
+
+helper def : getDuplicatedInEdge() : Set(Graph!Edge) =
+	thisModule.getDuplicates(thisModule.getV1().inEdges->union(thisModule.getV2().inEdges))
+;
+
+helper def : getDuplicates(input : Sequence(Graph!Edge)) : Set(Graph!Edge) =
+	input->iterate(ee; r : Set(Graph!Edge) = Set{} |
+		if(input->select(ed | ed.name = ee.name)->size().debug() > 1) then
+			if(r->select(dd | dd.name = ee.name)->size() > 0) then
+				r->union(Set{})
+			else
+				r->including(ee)
+			endif
+			else
+				r->union(Set{})
+			endif
+		)	
+;
+
+helper def : getDupProp() : Set(Graph!Property) = 
+	thisModule.getPropertyDuplicates(thisModule.getV1().properties->union(thisModule.getV2().properties))	
+;
+
+helper def : getPropertyDuplicates(input : Sequence(Graph!Property)) : Set(Graph!Property) =
+	input->iterate(pp; r : Set(Graph!Property) = Set{} |
+	if(input->select(p2 | p2.key = pp.key and p2.type = pp.type)->size().debug() > 1) then
+		if(r->select(dd | dd.key = pp.key)->size() > 0) then
+			r->union(Set{})
+		else
+			r->including(pp)
+		endif
+		else
+			r->union(Set{})
+		endif
+	)	
+;
+
+rule mergeVertices {
+	from
+		v1 : Graph!Vertex (v1.name = thisModule.receivingClass)
+	to
+		v : Graph!Vertex (
+			name <- ('merged_' + v1.name + '_' + thisModule.getV2().name).debug(),
+			labels <- v1.labels->union(thisModule.getV2().labels)->asSet(),
+			properties <- thisModule.removePropertyDuplicates(v1.properties->union(thisModule.getV2().properties)).debug('dup prop'),
+			inEdges <- thisModule.removeDuplicates(v1.inEdges->union(thisModule.getV2().inEdges)),
+			outEdges <- thisModule.removeDuplicates(v1.outEdges->union(thisModule.getV2().outEdges))
+		)
+}
+
+rule dropV2 {
+	from
+		v2 : Graph!Vertex ((v2.name = thisModule.mergedClass).debug()) 
+	to
+		drop
+}
+
+rule dropDuplicatedProperties {
+	from
+		pp : Graph!Property (thisModule.getDupProp().includes(pp))
+	to 
+		drop
+}
+
+rule dropDuplicateEdges {
+	from
+		ed : Graph!Edge (thisModule.getDuplicatedOutEdge().includes(ed))
+	to
+		drop
+}
