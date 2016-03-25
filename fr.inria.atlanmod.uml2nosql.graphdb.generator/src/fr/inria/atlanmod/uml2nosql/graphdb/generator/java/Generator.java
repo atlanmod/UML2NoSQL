@@ -46,7 +46,6 @@ public class Generator {
 	public void runGenerator(Resource resource, String outputURI) {
 		fileAccess.setOutputPath(outputURI);
 		generator.doGenerate(resource, fileAccess);
-		
 		System.out.println("Code Generation Finished");
 	}
 }
